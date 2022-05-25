@@ -1,0 +1,130 @@
+
+package com.mycompany.bai_2;
+
+import java.util.Scanner;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class mang {
+    private int sohang;
+    private int socot;
+    private String a[][];
+    
+    public mang(){
+    }
+    public mang(int sohang, int socot){
+        this.sohang= sohang;
+        this.socot=socot;
+        a = new String[sohang][socot];
+    }
+    
+    int nhap_so(){
+        Scanner ip = new Scanner(System.in);
+        int so;
+       
+            so=ip.nextInt();
+        return so;
+    }
+    String nhap_ktu(){
+        Scanner sc = new Scanner(System.in);
+        String p = null;
+        p = sc.next();
+        return p;
+	}
+ 
+    void nhap_kich_thuoc(){
+        do {
+            System.out.print("nhap so hang cua mang: ");
+            sohang = nhap_so();
+            if(sohang<0)
+                System.out.println("So hang khong hop le1");
+            }
+        while (sohang <0);
+     do {
+            System.out.print("nhap so cot cua mang: ");
+            socot=nhap_so();
+            if(socot<0)
+                System.out.println("So cot khong hop le!");
+        }
+        while (socot <0);
+    }
+    void nhap_mang(){
+        a = new String[sohang][socot];
+        for(int i = 0; i< sohang;i++){
+            for(int j = 0; j < socot ; j++){
+                System.out.print("Moi nhap phan tu a[" + i + "][" + j + "]=");
+                a[i][j] = nhap_ktu();
+            }
+        }
+    }
+    void xuat_mang(){
+        System.out.println("Mang vua nhap la: ");
+        for(int i = 0; i < sohang;i++){
+            for(int j = 0; j < socot;j++){
+                System.out.print(a[i][j]+"\t");
+            }
+            System.out.print("\n");
+        }
+    }
+    int ktu_in_hoa(){
+        int t =0;
+        for(int i = 0; i < sohang;i++)
+            for(int j = 0; j < socot;j++)
+                for (int d = 0; d < a[i][j].length(); d++) {
+			if (a[i][j].charAt(d) >= 'A' && a[i][j].charAt(d) <= 'Z') {
+				t++;
+			}
+                }
+            return t;
+    }
+    void xuat_hien(){
+        Map<String, Integer> map = new TreeMap<>();
+        String q[] = new String[100];
+        int d = 0;
+        for(int i = 0; i < sohang;i++){
+                for(int j = 0; j < socot;j++){
+                    if(i==0||i==sohang-1){
+                        q[d]=a[i][j];
+                        d++;
+                    }
+                    else {
+                        if(j==0||j==socot-1){
+                            q[d]=a[i][j];
+                            d++;} 
+                    }                                                 
+                }
+            }
+            for(int i=0; i <d; i++){
+                if(map.containsKey(q[i]))
+                {
+                int count = map.get(q[i]) + 1;
+                map.put(q[i], count);
+                }
+                else{
+                map.put(q[i], 1);}
+            }
+            for (String key : map.keySet()) {
+            System.out.println(key + " xuat hien " + map.get(key) + "lan !");
+        }
+        }
+    void in_hoa_1_hang(){
+        int k;
+        System.out.print("Moi nhap hang muon in hoa: ");
+        k = nhap_so();
+        for(int j = 0; j < socot;j++)
+            a[k][j]= a[k][j].toUpperCase();
+    }
+    
+    public static void main(String[] args) {
+        mang a = new mang();
+        a.nhap_kich_thuoc();
+        a.nhap_mang();
+        a.xuat_mang();
+        System.out.println("So ki tu in hoa tren mang la: "+ a.ktu_in_hoa());
+        a.in_hoa_1_hang();
+        System.out.println("Mang sau khi in hoa 1 hang : ");
+        a.xuat_mang();
+        System.out.println("So lan xuat hien cua moi pha tu");
+        a.xuat_hien();
+    }
+}
