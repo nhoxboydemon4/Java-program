@@ -1,0 +1,76 @@
+
+
+package com.mycompany.bai_3;
+
+import java.util.Scanner;
+
+public class Sach implements Comparable<Sach>{
+
+    private String ten,tac;
+    private double gia;
+    private int trang,nam,ma;
+    Scanner input = new Scanner(System.in);
+   
+    public Sach(){
+        super();
+    }
+    public Sach( int ma, String ten, String tac,double gia, int trang , int nam){
+        super();
+        this.ma=ma;
+        this.ten=ten;
+        this.tac=tac;
+        this.gia= gia;
+        this.trang=trang;
+        this.nam= nam;
+    }
+    public int getMaSach() {
+        return ma;
+    }
+    public int get_Year() {
+        return nam;
+    }
+    public String getName() {
+        return ten;
+    }
+    public double getgia() {
+        return gia;
+    }
+    public double gettrang() {
+        return trang;
+    }
+    public String gettac() {
+        return tac;
+    }
+    public void setMaSach(int ma) {
+        this.ma = ma;
+    }
+    public void setyear(int nam) {
+        this.nam = nam;
+    }
+    public void setName(String ten) {
+        this.ten = ten;
+    }
+    public void setgia(double gia) {
+        this.gia = gia;
+    }
+    public void settrang(int trang) {
+        this.trang = trang;
+    }
+    public void settac(String tac) {
+        this.tac = tac;
+    }
+    
+    public String toString() {
+        return "Ma Sach: " + ma + " ,Ten sach:" + ten+" ,Ten tac Gia:"  + tac + " ,Don gia: " + 
+                gia + ", So trang: " + trang;
+    }
+
+    @Override
+    public int compareTo(Sach o) {
+        return this.getName().compareTo(o.getName());
+    }
+
+}
+    
+    
+    
