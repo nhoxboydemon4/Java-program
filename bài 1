@@ -1,0 +1,50 @@
+package com.mycompany.btl;
+import java.util.Scanner;
+
+public class mang {
+    static Scanner ip = new Scanner(System.in);
+    public static int co(int a[]){
+    int c = 0;
+    for(int i = 0 ; i < a.length; i++)
+        if(a[i]%2==0)
+        c++;
+    return c;
+}
+    public static int vi_tri( int k ,int a[]){
+      int t = 0;
+        for ( int i = 0 ; i< a.length; i++){
+            if (a[i]==k){
+                t = i;
+            }
+        }            
+        return t+1;
+    }
+    public static int[] mang_tra_ve(int k, int a[]){
+        int j=0;
+         int b[] =new int[10];
+         for ( int i = 0 ; i< a.length; i++){
+            if (a[i]<k){
+                b[j]=a[i];
+                j++;
+            }
+        }
+         return b;
+    }
+    public static void main(String[] args) {
+        int k;
+        int a[] = {1,8,9,12,15,14,6,7,9,10};
+        for ( int i = 0 ; i< a.length; i++){
+           System.out.print(a[i] + "  ");
+         }
+        System.out.println("\nSo phan tu la boi cua 2: " + co(a));
+        System.out.println("Moi nhap so K co trong mang: ");
+        k = ip.nextInt();
+        System.out.println("Vi tri xuat hien cuoi cung cua K la " + vi_tri(k,a));
+        System.out.println("\nSo phan tu nho hon K la: ");
+        for ( int i = 0 ; i< mang_tra_ve(k,a).length; i++){
+            if(mang_tra_ve(k,a)[i]!=0)
+            System.out.print(mang_tra_ve(k,a)[i] + "  ");
+         }
+        
+    }
+}
