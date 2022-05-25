@@ -1,0 +1,39 @@
+
+package com.mycompany.bai_3;
+
+
+public class Sach_tham_khao extends Sach{
+    
+    private String Linh_vuc;
+    private int chuong;
+    
+    public Sach_tham_khao(){
+        super();
+    }
+     public Sach_tham_khao( int ma, String ten, String tac, double gia, 
+             int trang, int nam,String Linh_vuc,int chuong) {
+        super(ma, ten, tac, gia, trang, nam);
+        this.Linh_vuc = Linh_vuc;
+        this.chuong = chuong;
+    }
+    public int getchuong() {
+        return chuong;
+    }
+
+    public String getLinh_vuc() {
+        return Linh_vuc;
+    }
+    
+     public void setlinhvuc(String ten) {
+        this.Linh_vuc = Linh_vuc;
+    }
+     public void setchuong(int ten) {
+        this.chuong = chuong;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + ", Linh vuc cua sach: " + Linh_vuc + 
+                " ,So chuong cua sach:" +chuong; 
+    }
+}
+
