@@ -1,0 +1,30 @@
+
+package com.mycompany.bai_3;
+
+
+public class Tap_chi extends Sach{
+    private String ten_tap_chi;
+    
+
+    public Tap_chi(){
+        super();
+    }
+
+    public Tap_chi( int ma, String ten, String tac, double gia, int trang, 
+            int nam, String ten_tap_chi) {
+        super(ma, ten, tac, gia, trang, nam);
+        this.ten_tap_chi = ten_tap_chi;
+    }
+
+    public String getTen_tap_chi() {
+        return ten_tap_chi;
+    }
+    
+    public void setTen_tap_chi(String ten_tap_chi) {
+        this.ten_tap_chi = ten_tap_chi;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + ", Ten rien cua tap chi: " +ten_tap_chi;
+    }
+}
