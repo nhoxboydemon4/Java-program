@@ -1,7 +1,5 @@
 
 
-package com.mycompany.bai_3;
-
 import java.util.Scanner;
 
 public class Sach implements Comparable<Sach>{
