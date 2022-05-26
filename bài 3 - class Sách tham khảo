@@ -1,4 +1,5 @@
 
+
 package com.mycompany.bai_3;
 
 
@@ -6,30 +7,38 @@ public class Sach_tham_khao extends Sach{
     
     private String Linh_vuc;
     private int chuong;
+    private String[] tenchuong;
     
     public Sach_tham_khao(){
         super();
     }
      public Sach_tham_khao( int ma, String ten, String tac, double gia, 
-             int trang, int nam,String Linh_vuc,int chuong) {
+             int trang, int nam,String Linh_vuc,int chuong, String[] tenchuong){
         super(ma, ten, tac, gia, trang, nam);
         this.Linh_vuc = Linh_vuc;
         this.chuong = chuong;
+        tenchuong = new String[chuong];
     }
     public int getchuong() {
         return chuong;
     }
-
     public String getLinh_vuc() {
         return Linh_vuc;
     }
-    
      public void setlinhvuc(String ten) {
         this.Linh_vuc = Linh_vuc;
     }
      public void setchuong(int ten) {
         this.chuong = chuong;
     }
+    public String[] getTenchuong() {
+        return tenchuong;
+    }
+
+    public void setTenchuong(String[] tenchuong) {
+        this.tenchuong = tenchuong;
+    }
+     
     @Override
     public String toString() {
         return super.toString() + ", Linh vuc cua sach: " + Linh_vuc + 
