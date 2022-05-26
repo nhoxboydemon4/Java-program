@@ -2,12 +2,14 @@
 bài tập công nghê java
 
 Phần 1. Mảng 1 chiều
+
 Bài 1.2. Cho mảng 1 chiều các số nguyên (int) hiện thực các phương thức sau:
 1) Đếm số phần tử là bội số của 2
 2) Xác định vị trí xuất hiện cuối cùng của 1 số cho trước trong mảng
 3) Lấy ra các phần tử nhỏ hơn 1 số cho trước (kiểu trả về là mảng)
 
 Phần 2. Mảng 2 chiều
+
 Bài 2.7. Cho mảng 2 chiều các ký tự (char) có n hàng và m cột, hiện thực các phương
 thức sau:
 1) Có bao nhiêu ký tự chữ viết hoa trên mảng 2 chiều
@@ -17,6 +19,7 @@ hoa
 hàng/cột cuối cùng)
 
 Phần 3. Áp dụng Java Collection Frameworks
+
 Bài 3.2. Xây dựng chương trình quản lý ấn phẩm cho nhà sách UTC2. Nhà sách có 2 loại ấn phẩm (sách tham khảo và tạp chí) với các thông tin: tiêu đề, số trang, năm xuất bản, tác giả, giá tiền. Tạp chí có thêm thông tin: tên tạp chí. Sách tham khảo có thêm thông tin: lĩnh vực (ví dụ: y học, thể thao, giáo dục, ...) và các chương sách. Mỗi chương sách gồm có các thông tin: tiêu đề, số trang. Danh mục ấn phẩm chứa danh sách tất cả các ấn phẩm của nhà sách.
 Hiện thực các yêu cầu sau:
 1) Hiện thực các lớp cần thiết cho bài toán quản lý sách
