@@ -1,0 +1,205 @@
+
+package com.mycompany.bai_3;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Collections;
+import java.util.List;
+public class Main {
+    
+    static Scanner input = new Scanner(System.in);
+    
+    
+    public static void main(String[] args) {
+        ArrayList<Sach_tham_khao> aSTK = new ArrayList<>();
+        ArrayList<Tap_chi> aTC = new ArrayList<>();
+     
+        System.out.print("Moi nhap nam hien tai: ");
+        int now = input.nextInt();
+        String[] a1 = {"1 - anh","2 - co ay","3 - anh ta"};
+        String[] a2 = {"1 - DUCATI","2 - co ay","3 - anh ta","4 - chung ta"};
+        String[] a3 = {"1 - HAHAHA","2 - NEW",};
+        String[] a4 = {"1 - BABY","2 - TOWN","3 - anh ta"};
+        String[] a5 = {"1 - GOD","2 - co ay","3 - anh ta", "4 - LEE SIN"};
+        
+        Sach_tham_khao S1 = new Sach_tham_khao(001,"Đắc Nhân Tâm", "Dale Carnegie" ,20000,200,1995,"khoa hoc",3,a1);
+        Sach_tham_khao S2 = new Sach_tham_khao(002," Nhà giả kim", "Paulo Coelho" ,50000,500,2002,"chinh tri",4,a2);
+        Sach_tham_khao S3 = new Sach_tham_khao(003,"Tội Ác Và Hình Phạt", "Fyodor Dostoevsky" ,70000,1500,2003,"van hoa",2,a3);
+        Sach_tham_khao S4 = new Sach_tham_khao(004,"uổi Trẻ Đáng Giá Bao Nhiêu?", "Rosie Nguyễn" ,90000,6500,1999,"giao duc",3,a4);
+        Sach_tham_khao S5 = new Sach_tham_khao(005,"Dạy Con Làm Giàu", "Robert Kiyosaki" ,200000,400,2015,"tu vi",4,a5);
+    
+        
+        Tap_chi S6 = new Tap_chi(006,"Vogue", "Arthur Turnure" ,20000,200,2012,"anh yeu co ay");
+        Tap_chi S7 = new Tap_chi(007,"Harper's Bazaar", "Hearst" ,50000,200,2021,"ban gioi vcl");
+        Tap_chi S8 = new Tap_chi(012,"Elle", "Hélène Gordon" ,20000,200,2012,"chung ta hien tai");
+        Tap_chi S9 = new Tap_chi(013,"Grazia", "Mondadori" ,20000,200,2021,"yen ban than");
+        Tap_chi S10 = new Tap_chi(010,"Glamour", "Codé Nast Publications" ,60000,200,2006,"gia dinh");
+        
+        aSTK.add(S1);
+        aSTK.add(S2);
+        aSTK.add(S3);
+        aSTK.add(S4);
+        aSTK.add(S5);
+        
+        aTC.add(S9);
+        aTC.add(S8);
+        aTC.add(S7);
+        aTC.add(S6);
+        aTC.add(S10);
+        
+        Giao_dien_1 q = new Giao_dien_1();
+          q.showResult3(aTC);
+          q.showResult4(aSTK);
+          javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+          q.pack();
+          q.setLocationRelativeTo(null);
+          q.setVisible(true);
+            }
+        });
+        kiemtra10year(aTC,now);
+        cung_loai(aSTK);
+        max_chuong (aSTK);
+        seach_by_name(aTC);
+        tong_tien(aSTK, aTC);
+        one_year(aTC,now);
+        ComparableSort(aSTK);
+        dem_so_lan_xuat_hien(aSTK,aTC);
+        
+        
+    }
+    public static void ComparableSort(List<Sach_tham_khao> aSTK){
+        Collections.sort(aSTK);
+        for(int i = 0 ; i < aSTK.size(); i++){
+            System.out.println(aSTK.get(i).toString());
+        }
+    }
+    public static void dem_so_lan_xuat_hien(ArrayList<Sach_tham_khao> aSTK,
+            ArrayList<Tap_chi> aTC){
+        Map<Integer, Integer> map = new TreeMap<>();
+        for(int i = 0 ; i < aTC.size(); i++){
+            if(map.containsKey(aTC.get(i).get_Year()))
+                {
+                int count = map.get(aTC.get(i).get_Year()) + 1;
+                map.put(aTC.get(i).get_Year(), count);
+                }
+            else{
+                map.put(aTC.get(i).get_Year(), 1);
+                }
+        } for(int i = 0 ; i < aSTK.size(); i++){
+            if(map.containsKey(aSTK.get(i).get_Year()))
+                {
+                int count = map.get(aSTK.get(i).get_Year()) + 1;
+                map.put(aSTK.get(i).get_Year(), count);
+                }
+            else{
+                map.put(aSTK.get(i).get_Year(), 1);
+                }
+        } 
+        for (int key : map.keySet()) {
+            System.out.println(key + " xuat hien " + map.get(key) + "lan !");
+        }
+    }
+    static void one_year(ArrayList<Tap_chi> aTC,int now){
+        System.out.println("Cac Tap chi duoc xuat ban vao 1 nam truoc: ");
+        for(int i = 0 ; i < aTC.size(); i++){
+            if(now - aTC.get(i).get_Year() == 1)
+            {
+                System.out.println(aTC.get(i).toString());
+            }
+        }
+       
+        
+    }
+
+        public static void kiem_tra_loai(ArrayList<Sach_tham_khao> aSTK,
+                ArrayList<Tap_chi> aTC){
+        System.out.print("MOI NHAP MA SACH CAN KIEM TRA : ");
+        int s = input.nextInt();
+        for(int i = 0 ; i < aSTK.size(); i++){
+            if(aSTK.get(i).getMaSach()==s)
+            {
+                System.out.println("Day la sach tham khao! ");}
+                }
+        for(int i = 0 ; i < aTC.size() ; i++){
+            if(aTC.get(i).getMaSach()==s)
+            {
+                System.out.println("Day la Tap Chi! ");
+            }
+        }
+    }
+    public static void kiemtra10year (ArrayList<Tap_chi> aTC,int now){
+        System.out.println("\nCac tap chi duoc in cach day 10 nam:");
+        for(int i = 0 ; i < aTC.size(); i++){
+            if(now - aTC.get(i).get_Year() == 10)
+            {
+                System.out.println(aTC.get(i).getName());
+            }
+        }
+    }
+    public static void cung_loai(ArrayList<Sach_tham_khao> aSTK){
+        int check1=0;
+        System.out.println(" Moi nhap ma quyen sach 1 can kiem tra: ");
+        int s = input.nextInt();
+        System.out.println(" Moi nhap ma quyen sach 2 can kiem tra: ");
+        int t = input.nextInt();
+        for(int i = 0 ; i < aSTK.size(); i++){
+            if(aSTK.get(i).getMaSach()==s)
+            {
+                check1++;
+            }
+            if(aSTK.get(i).getMaSach()==s)
+            {
+                check1++;
+            }
+        }
+        if(check1==2)
+            System.out.println("Hai quyen sach cung loai !!");
+        else
+            System.out.println("Hai quyen sach nay khac loai !!");
+    }
+    public static void tong_tien(ArrayList<Sach_tham_khao> aSTK,ArrayList<Tap_chi> aTC){
+        double s=0;
+        for(int i = 0 ; i < aSTK.size(); i++){
+            s= s+aSTK.get(i).getgia();
+            
+                }
+        for(int i = 0 ; i < aTC.size() ; i++){
+            s= s+aTC.get(i).getgia();
+        }
+        System.out.print("\nTong tien la : "+ s);
+    }
+    public static void max_chuong (ArrayList<Sach_tham_khao> aSTK){
+        int max = aSTK.get(0).getchuong();
+        int z = 0;
+        for(int i = 0 ; i < aSTK.size(); i++){
+            if(aSTK.get(i).getchuong() > max)
+            {
+                max = aSTK.get(i).getchuong();
+                z=i;
+            }
+        }
+        System.out.print("quyen sach co so chuong cao nhat la "+ 
+                aSTK.get(z).getName()+ "\n");
+        System.out.println("Co ma so la: " + aSTK.get(z).getMaSach());
+    }
+    static void seach_by_name(ArrayList<Tap_chi> aTC){
+        String name=null;
+        System.out.print("Moi nhap ten Tap Chi can tim: ");
+        name = input.next();
+        int check=0;
+        for(int i = 0 ; i < aTC.size(); i++){
+            if(aTC.get(i).getName() == name)
+            {
+                check++;
+            }
+        }
+        if(check==0)
+            System.out.println("Quyen tap chi trong thu vien!!" );
+        else
+            System.out.println("Quyen Tap chi khong co trong thu vien !!");
+    }
+}
+
