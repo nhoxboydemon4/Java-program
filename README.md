@@ -31,11 +31,8 @@ Java_UTC2_2021-2022
 5) Phương thức kiểm tra hai ấn phẩm có cùng loại và cùng tác giả hay không
 6) Tính tổng tiền của tất các ấn phẩm trong nhà sách
 7) Tìm quyển sách tham khảo có chương sách nhiều trang nhất
-8) Tìm xem trong danh sách các ấn phẩm có chứa một tạp chí có tên cho trước
-hay không?
+8) Tìm xem trong danh sách các ấn phẩm có chứa một tạp chí có tên cho trước hay không?
 9) Lấy ra danh sách các tạp chí được xuất bản vào 1 năm cho trước
-10)Sắp xếp ấn phẩm tăng dần theo tiêu đề và giảm dần theo năm xuất bản (sử
-dụng interface Comparable hoặc Comparator)
-11)Thống kê số lượng ấn phẩm theo năm xuất bản. Ví dụ 2020: 5, 2021: 10, ...
-năm 2020 có 5 ấn phẩm, năm 2021 có 10 ấn phẩm.
+10)Sắp xếp ấn phẩm tăng dần theo tiêu đề và giảm dần theo năm xuất bản (sử dụng interface Comparable hoặc Comparator)
+11)Thống kê số lượng ấn phẩm theo năm xuất bản. Ví dụ 2020: 5, 2021: 10, ... năm 2020 có 5 ấn phẩm, năm 2021 có 10 ấn phẩm.
 12)Xây dựng GUI hiển thị danh sách các loại ấn phẩm trong nhà sách
