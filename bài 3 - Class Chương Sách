@@ -1,0 +1,25 @@
+
+public class chuong {
+    private String tieude;
+    private int sotrang;
+    public chuong(){
+        super();
+    }
+    public chuong(String tieude, int sotrang){
+        super();
+        this.tieude = tieude;
+        this.sotrang = sotrang;
+    }
+    public int getSotrang() {
+        return sotrang;
+    }
+    public String getTieude() {
+        return tieude;
+    }
+    public void setSotrang(int sotrang) {
+        this.sotrang = sotrang;
+    }
+    public void setTieude(String tieude) {
+        this.tieude = tieude;
+    }
+}
