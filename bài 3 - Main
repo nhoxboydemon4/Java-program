@@ -1,4 +1,5 @@
 
+
 package com.mycompany.bai_3;
 
 import java.util.ArrayList;
@@ -18,12 +19,13 @@ public class Main {
      
         System.out.print("Moi nhap nam hien tai: ");
         int now = input.nextInt();
-        String[] a1 = {"1 - anh","2 - co ay","3 - anh ta"};
-        String[] a2 = {"1 - DUCATI","2 - co ay","3 - anh ta","4 - chung ta"};
-        String[] a3 = {"1 - HAHAHA","2 - NEW",};
-        String[] a4 = {"1 - BABY","2 - TOWN","3 - anh ta"};
-        String[] a5 = {"1 - GOD","2 - co ay","3 - anh ta", "4 - LEE SIN"};
+        ArrayList<chuong> a1 = new ArrayList<>();
+        ArrayList<chuong> a2 = new ArrayList<>();
+        ArrayList<chuong> a3 = new ArrayList<>();
+        ArrayList<chuong> a4 = new ArrayList<>();
+        ArrayList<chuong> a5 = new ArrayList<>();
         
+                 
         Sach_tham_khao S1 = new Sach_tham_khao(001,"Đắc Nhân Tâm", "Dale Carnegie" ,20000,200,1995,"khoa hoc",3,a1);
         Sach_tham_khao S2 = new Sach_tham_khao(002," Nhà giả kim", "Paulo Coelho" ,50000,500,2002,"chinh tri",4,a2);
         Sach_tham_khao S3 = new Sach_tham_khao(003,"Tội Ác Và Hình Phạt", "Fyodor Dostoevsky" ,70000,1500,2003,"van hoa",2,a3);
@@ -202,4 +204,5 @@ public class Main {
             System.out.println("Quyen Tap chi khong co trong thu vien !!");
     }
 }
+
 
