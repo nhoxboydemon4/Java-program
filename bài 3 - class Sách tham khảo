@@ -1,24 +1,24 @@
 
 
-package com.mycompany.bai_3;
-
-
+import java.util.ArrayList;
 public class Sach_tham_khao extends Sach{
     
     private String Linh_vuc;
     private int chuong;
-    private String[] tenchuong;
+    private ArrayList<chuong> chuongs;
     
     public Sach_tham_khao(){
         super();
     }
      public Sach_tham_khao( int ma, String ten, String tac, double gia, 
-             int trang, int nam,String Linh_vuc,int chuong, String[] tenchuong){
+             int trang, int nam,String Linh_vuc,int chuong, ArrayList<chuong> chuongs){
         super(ma, ten, tac, gia, trang, nam);
         this.Linh_vuc = Linh_vuc;
         this.chuong = chuong;
-        tenchuong = new String[chuong];
+        this.chuongs = chuongs;
+     
     }
+     
     public int getchuong() {
         return chuong;
     }
@@ -31,14 +31,13 @@ public class Sach_tham_khao extends Sach{
      public void setchuong(int ten) {
         this.chuong = chuong;
     }
-    public String[] getTenchuong() {
-        return tenchuong;
-    }
 
-    public void setTenchuong(String[] tenchuong) {
-        this.tenchuong = tenchuong;
+    public ArrayList<chuong> getChuongs() {
+        return chuongs;
     }
-     
+    public void setChuongs(ArrayList<chuong> chuongs) {
+        this.chuongs = chuongs;
+    }
     @Override
     public String toString() {
         return super.toString() + ", Linh vuc cua sach: " + Linh_vuc + 
